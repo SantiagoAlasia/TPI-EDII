@@ -25,8 +25,8 @@ Para la programacion del PIC 16F887 se usara ASEMBLER.
 
 ## COMPONENTES UTILIZADOS
 - PIC 16F887
-- Modulo RFID
-- OPT101
+- Modulo RFID: RDM6300
+- Sensor luminico: OPT101
 - 1 Led Rojo
 - 1 Led Verde
 - 1 Led de alta luminicidad Blanco
