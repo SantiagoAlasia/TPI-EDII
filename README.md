@@ -1,4 +1,4 @@
-# TFI-EDII
+# TPI-EDII
 Trabajo Final Integrador de la materia Electrónica Digital II. 
 
 ## ALCANCE DEL TRABAJO
@@ -41,6 +41,7 @@ Para la programacion del PIC 16F887 se usara ASEMBLER.
 - Pines macho arduino ...
 - Servo motor ...
 - ...
+(Las hojas de datos, asi como paginas con informacion sobre el uso de los componenetes estaran en la carpeta de /documentacion/investigacion)
 
 ## SIMULACION
 Antes de armar la PCB se hizo una simulacion de todo el sistema en PROTEUS. La simulacion se puede encontrar dentro de este repo en la carpeta simulacion. Ademas, se utilizo la herramienta PROTEUS para el diseño de la PCB.
