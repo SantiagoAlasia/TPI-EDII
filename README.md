@@ -31,7 +31,7 @@ De esta forma abarcamos todos los requerimientos del TFI. Se utilizara la comuni
 - SSE.2.2 OPT101: En este subsistema utilizaremos el sensor OPT101, como tambien un circuito para obtener el valor de referencia nesesario.
 - SSE.2.3 Conversor Serial to USB: Utilizaremos un modulo comercial al cual le adaptaremos el conector USB para poder usar un USB Tipo B Hembra.
 
-#PROGRAMACION
+## PROGRAMACION
 Para la programacion del PIC 16F887 se usara ASEMBLER.
 
 ## COMPONENTES UTILIZADOS
