@@ -24,9 +24,7 @@ De esta forma abarcamos todos los requerimientos del TFI. Se utilizara la comuni
 - SSE.1.1 Señalizacion Optica: Cuenta con un Led Rojo y un Led Verde.
 - SSE.1.2 Entrada de Datos: Cuenta con 9 botones dispuestos como un teclado matricial de 3x3.
 - SSE.1.3 Visualizavion de Datos: Cuenta con 4 Display's CC, con sus correspondientes transistores para el control de cada uno.
-- SSE.1.4 Barrera de Acceso: Cuenta con un servomotor, el driver correspondiente y un optoacoplador(IC PC817) para aislar la etapa de potencia de la de control.
-- SSE.1.5 Reflector: Cuenta con una lampara y un rele para su activacion.
-- SSE.1.6 Lector de Tarjetas: Utilizaremos el modulo RDM6300 el cual podremos utilizar con comunicacion UART.
+- SSE.1.4 Lector de Tarjetas: Utilizaremos el modulo RDM6300 el cual podremos utilizar con comunicacion UART.
 - SSE.2.1 PIC16F887: Contara del PIC, el circuito minimo para su funcionamiento (cristal, capacitores, etc) y el circuito nesesario para la programacion mediante el PICKIT3.
 - SSE.2.2 OPT101: En este subsistema utilizaremos el sensor OPT101, como tambien un circuito para obtener el valor de referencia nesesario.
 - SSE.2.3 Conversor Serial to USB: Utilizaremos un modulo comercial al cual le adaptaremos el conector USB para poder usar un USB Tipo B Hembra.
