@@ -1,1 +1,135 @@
-
+LIST P=16F887
+#include "p16f887.inc"
+__CONFIG _CONFIG1, _XT_OSC & _WDTE_OFF & _MCLRE_ON & _LVP_OFF
+    	    
+;definicion de variables
+CBLOCK  0X20
+	W_TEMP
+	STATUS_TEMP
+	NTecla
+ENDC
+	
+;Inicio micro
+    ORG	    0X00
+    GOTO    INICIO
+    ORG	    0X04
+    GOTO    ISR_INICIO
+    ORG	    0X05
+	
+INICIO
+;ADC
+    BANKSEL ANSEL
+    MOVLW   0X0F   ;se define RA0 a RA4 como entradas analogicas
+    MOVWF   ANSEL
+    CLRF    ANSELH
+;puerto A
+    BANKSEL TRISA ;se define RA0 a RA4 como entradas analogicas
+    MOVLW   0X0F
+    MOVWF   TRISA
+;puerto B y los pull_up
+    BANKSEL TRISB ;se define RB0 a RB2 como entradas digitales
+    MOVLW   0X07
+    MOVWF   TRISB
+    BANKSEL WPUB  ;Pull-up de RB0 a RB2
+    MOVLW   0X07
+    MOVWF   WPUB
+    BANKSEL IOCB  ;Interrupciones en RB0,RB1 y RB2
+    MOVLW   0X07
+    MOVWF   IOCB
+    BANKSEL PORTB
+    CLRF    PORTB
+;puerto C Y D
+    BANKSEL TRISC 
+    CLRF    TRISC ;Puerto C definido como salida
+    CLRF    TRISD ;Puerto D definido como salida
+    BANKSEL PORTC
+    MOVLW   0X04
+    MOVWF   PORTC
+    MOVLW   0X3F
+    MOVWF   PORTD ;Inicializamos el display en 0
+;interrupcion
+    BANKSEL OPTION_REG
+    BCF	OPTION_REG,7
+    BCF	OPTION_REG,6
+    BANKSEL INTCON
+    MOVLW   0XA8
+    MOVWF   INTCON
+;movemos a banco 0
+    BCF	    STATUS,RP0
+    BCF	    STATUS,RP1
+    CLRF    NTecla
+LOOP
+    MOVF NTecla, W
+    CALL NUMERO
+    MOVWF PORTD ;Moatramos numero en el display
+    GOTO LOOP
+    
+ISR_INICIO
+    MOVWF   W_TEMP
+    SWAPF   STATUS,W
+    MOVWF   STATUS_TEMP
+;----------------------------
+    CALL    TECL_PRESS
+;----------------------------
+FIN_ISR
+    BCF	    INTCON,RBIF
+    SWAPF   STATUS_TEMP,W
+    MOVWF   STATUS
+    SWAPF   W_TEMP,F
+    SWAPF   W_TEMP,W
+    RETFIE
+    
+TECL_PRESS
+    CLRF    NTecla
+    INCF    NTecla, F
+    MOVLW   B'00110000' ; Fila 1 baja
+    MOVWF   PORTB
+    NOP
+    
+TEST_COL
+    BTFSS   PORTB, 0
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
+    BTFSS   PORTB, 1
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
+    BTFSS   PORTB, 2
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
+    
+TEST_FIL
+    BTFSS   PORTB, 3
+    GOTO    TECL_RST
+    BSF	    STATUS, C
+    RRF	    PORTB, 1
+    GOTO    TEST_COL
+    
+TECL_RST
+    CLRF    NTecla
+    RETURN
+    
+TECL_DELAY
+Espera1
+    BTFSS   PORTB, 0
+    GOTO    Espera1
+Espera2
+    BTFSS   PORTB, 1
+    GOTO    Espera2
+Espera3
+    BTFSS   PORTB, 2
+    GOTO    Espera3
+    RETURN
+    
+NUMERO
+    ADDWF	PCL,F
+    RETLW	0X3F
+    RETLW	0X06
+    RETLW	0X5B
+    RETLW	0X4F
+    RETLW	0X66
+    RETLW	0X6D
+    RETLW	0X7D
+    RETLW	0X07
+    RETLW	0X7F
+    RETLW	0X67
+END
