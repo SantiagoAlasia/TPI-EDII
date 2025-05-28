@@ -69,10 +69,10 @@ ISR_INICIO
     SWAPF   STATUS,W
     MOVWF   STATUS_TEMP
 ;----------------------------
+    BTFSC   INTCON, RBIF
     CALL    TECL_PRESS
 ;----------------------------
 FIN_ISR
-    BCF	    INTCON,RBIF
     SWAPF   STATUS_TEMP,W
     MOVWF   STATUS
     SWAPF   W_TEMP,F
@@ -86,7 +86,6 @@ TECL_PRESS
     MOVWF   PORTB
     NOP
     
-TEST_COL
     BTFSS   PORTB, 0
     GOTO    TECL_DELAY
     INCF    NTecla, F
@@ -97,15 +96,35 @@ TEST_COL
     GOTO    TECL_DELAY
     INCF    NTecla, F
     
-TEST_FIL
-    BTFSS   PORTB, 3
-    GOTO    TECL_RST
-    BSF	    STATUS, C
-    RRF	    PORTB, 1
-    GOTO    TEST_COL
+    MOVLW   B'00101000' ; Fila 1 baja
+    MOVWF   PORTB
+    BTFSS   PORTB, 0
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
+    BTFSS   PORTB, 1
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
     
-TECL_RST
+    BTFSS   PORTB, 2
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
+    
+    MOVLW   B'00011000' ; Fila 1 baja
+    MOVWF   PORTB
+    BTFSS   PORTB, 0
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
+    BTFSS   PORTB, 1
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
+    BTFSS   PORTB, 2
+    GOTO    TECL_DELAY
+    INCF    NTecla, F
+    
+    
     CLRF    NTecla
+    BCF	    INTCON, RBIF
+    CLRF    PORTB
     RETURN
     
 TECL_DELAY
@@ -118,11 +137,14 @@ Espera2
 Espera3
     BTFSS   PORTB, 2
     GOTO    Espera3
+
+    BCF	    INTCON, RBIF
+    CLRF    PORTB
     RETURN
     
 NUMERO
     ADDWF	PCL,F
-    RETLW	0X3F
+    RETLW	0X40
     RETLW	0X06
     RETLW	0X5B
     RETLW	0X4F
