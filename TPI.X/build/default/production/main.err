@@ -1,0 +1,19 @@
+Warning[205] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 1 : Found directive in column 1. (LIST)
+Warning[205] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 4 : Found directive in column 1. (__CONFIG)
+Warning[205] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 7 : Found directive in column 1. (CBLOCK)
+Warning[205] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 31 : Found directive in column 1. (ENDC)
+Warning[205] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 64 : Found directive in column 1. (ENDM)
+Warning[205] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 73 : Found directive in column 1. (ENDM)
+Warning[205] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 86 : Found directive in column 1. (ENDM)
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 44 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 46 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 51 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 53 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 54 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 55 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 56 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 57 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 70 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 83 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 128 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] C:\USERS\SANTIAGO ALASIA\DOCUMENTS\UNC\ELECTRONICA DIGITAL II\TPI-EDII\TPI.X\MAIN.ASM 348 : Found directive in column 1. (END)
